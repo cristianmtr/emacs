@@ -1,0 +1,9 @@
+session.*
+.emacs.desktop*
+*%*
+saves/*
+ac-comphist.dat
+auto-save-list/*
+eproject.lst
+ede-projects.el
+*~

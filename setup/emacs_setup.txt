@@ -1,0 +1,8 @@
+1. get the rar off of drive
+2. copy .emacs and .emacs.d files to /users/you/AppData/Roaming
+3. modify .emacs for default directory to point at when C-x C-f
+3. modify emacs.reg to target the vbs script in your directory
+4. add .reg file to registry
+5. profit
+
+NOTE: In WinSCP, do the following in the editor preferences: D:\applications\emacs\bin\emacsclientw.exe !.! -a D:\applications\emacs\bin\runemacs.exe
