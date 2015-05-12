@@ -66,8 +66,21 @@
     (when isearch-forward (goto-char isearch-other-end)))
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
 
+
+(defun insert-date (prefix)
+  "Insert the current date. With prefix-argument, use ISO format. With
+   two prefix arguments, write out the day and month name."
+  (interactive "P")
+  (let ((format (cond
+		 ((not prefix) "%d.%m.%Y")
+		 ((equal prefix '(4)) "%Y-%m-%d")
+		 ((equal prefix '(16)) "%A, %d. %B %Y")))
+	(system-time-locale "de_DE"))
+    (insert (format-time-string format))))
+
+
 ;; today's date
-(defun insert-standard-date ()
+(defun insert-date-and-time ()
   "Inserts standard date time string." 
   (interactive)
   (insert (format-time-string "%c")))
@@ -168,5 +181,8 @@
 (global-set-key (kbd "<C-kp-add>") 'text-scale-increase)
 (global-set-key (kbd "<C-kp-subtract>") 'text-scale-decrease)
 
-;; keybindings for inserting today's date
-(global-set-key (kbd "C-c .") 'insert-standard-date)
+;; keybindings for inserting today's date or date & time
+(global-set-key (kbd "C-c .") 'insert-date)
+(global-set-key (kbd "C-c ,") 'insert-date-and-time)
+
+
