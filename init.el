@@ -66,6 +66,12 @@
     (when isearch-forward (goto-char isearch-other-end)))
 (add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
 
+;; today's date
+(defun insert-standard-date ()
+  "Inserts standard date time string." 
+  (interactive)
+  (insert (format-time-string "%c")))
+
 ;; macro:
 (fset 'end-of-line-then-new-line
    "\C-e\C-j")
@@ -161,3 +167,6 @@
 ;; keybindings for font increase and decrease
 (global-set-key (kbd "<C-kp-add>") 'text-scale-increase)
 (global-set-key (kbd "<C-kp-subtract>") 'text-scale-decrease)
+
+;; keybindings for inserting today's date
+(global-set-key (kbd "C-c .") 'insert-standard-date)
