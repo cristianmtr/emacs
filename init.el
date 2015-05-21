@@ -80,10 +80,10 @@
 
 
 ;; today's date
-(defun insert-date-and-time ()
+(defun insert-now-time ()
   "Inserts standard date time string." 
   (interactive)
-  (insert (format-time-string "%c")))
+  (insert (format-time-string "%H:%M:%S")))
 
 ;; macro:
 (fset 'end-of-line-then-new-line
@@ -183,6 +183,6 @@
 
 ;; keybindings for inserting today's date or date & time
 (global-set-key (kbd "C-c .") 'insert-date)
-(global-set-key (kbd "C-c ,") 'insert-date-and-time)
+(global-set-key (kbd "C-c ,") 'insert-now-time)
 
 
