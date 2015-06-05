@@ -9,3 +9,5 @@ ede-projects.el
 *~
 *#*
 server/*
+elpa/archives/elpy/archive-contents*
+elpa/archives/*
