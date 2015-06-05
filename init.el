@@ -12,6 +12,7 @@
 (require 'nav)
 (require 'ido)
 (require 'package)
+(require 'auto-complete-config)
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 (package-initialize)
@@ -29,6 +30,9 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict/")
+(ac-config-default)
 
 ;;FUNCTION definitions here be
 ;; for commenting and uncommenting lines
