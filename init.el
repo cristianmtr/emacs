@@ -14,15 +14,19 @@
 (require 'package)
 (require 'auto-complete-config)
 (require 'yafolding)
+(require 'back-button)
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 (package-initialize)
+
 ;; markdown mode
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
+
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -32,6 +36,7 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+;; dictionaries for auto-complete
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict/")
 (ac-config-default)
 
@@ -95,6 +100,15 @@
    "\C-e\C-j")
 
 ;; various MODES go here
+
+;; back button
+;; C-x C-<SPC>	go back in global-mark-ring, respects prefix arg
+;; C-x C-<left>	go back in global-mark-ring
+;; C-x C-<right>	go forward in global-mark-ring
+;; C-x <SPC>	go back in (buffer-local) mark-ring, respects prefix arg
+;; C-x <left>	go back in (buffer-local) mark-ring
+;; C-x <right>	go forward in (buffer-local) mark-ring
+(back-button-mode 1)
 
 ;; undo tree
 (global-undo-tree-mode)
