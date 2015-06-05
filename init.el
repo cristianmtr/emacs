@@ -13,6 +13,7 @@
 (require 'ido)
 (require 'package)
 (require 'auto-complete-config)
+(require 'yafolding)
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 (package-initialize)
@@ -189,4 +190,13 @@
 (global-set-key (kbd "C-c .") 'insert-date)
 (global-set-key (kbd "C-c ,") 'insert-date-and-time)
 
+;; keybindings for yafolding mode
+(global-unset-key (kbd "<C-S-return>"))
+(global-unset-key (kbd "<C-return>"))
+(global-unset-key (kbd "<C-M-return>"))
 
+(defvar yafolding-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "<C-S-return>") #'yafolding-toggle-element)
+    (define-key map (kbd "<C-M-return>") #'yafolding-toggle-all)
+    map))
