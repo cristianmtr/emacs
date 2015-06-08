@@ -7,14 +7,19 @@
 (setq default-directory "~/dev" )
 ;; (add-to-list 'load-path "~/Ddrive/applications/emacs/myplugins")
 (add-to-list 'load-path "~/.emacs.d/elpa")
+(add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode")
 (require 'web-mode)
 (require 'undo-tree)
 (require 'nav)
 (require 'ido)
 (require 'package)
-(require 'auto-complete-config)
 (require 'yafolding)
 (require 'back-button)
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 (package-initialize)
@@ -35,10 +40,6 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-;; dictionaries for auto-complete
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict/")
-(ac-config-default)
 
 ;;FUNCTION definitions here be
 ;; for commenting and uncommenting lines
@@ -214,3 +215,6 @@
     (define-key map (kbd "<C-S-return>") #'yafolding-toggle-element)
     (define-key map (kbd "<C-M-return>") #'yafolding-toggle-all)
     map))
+
+;; ace jump mode
+(define-key global-map (kbd "C-x m") 'ace-jump-mode)
