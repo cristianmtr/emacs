@@ -156,7 +156,7 @@
 ;; C-u <nr> C-x Shift-f
 (define-key ctl-x-map "S" 'save-current-configuration)
 (define-key ctl-x-map "F" 'resume)
-(define-key ctl-x-map "K" 'wipe) 
+(define-key ctl-x-map "K" 'wipe)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-t") 'set-mark-command)
 (global-set-key (kbd "C-'") 'comment-or-uncomment-region-or-line)
@@ -166,7 +166,7 @@
 (cua-mode)
 
 ;; this needs to go AFTER the cua-mode
-(global-set-key (kbd "C-SPC") 'hippie-expand)
+(global-set-key (kbd "C-SPC") 'dabbrev-expand)
 
 ;; C-j should function as RET in Python Elpy mode
 ;; commented out on Linux. doesn't work. default behaviour is ok
