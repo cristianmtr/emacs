@@ -217,4 +217,7 @@
     map))
 
 ;; ace jump mode
-(define-key global-map (kbd "C-m") 'ace-jump-mode)
+(define-key global-map (kbd "C-q") 'ace-jump-mode)
+
+
+
