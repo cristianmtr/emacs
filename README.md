@@ -1,12 +1,32 @@
-#Personal Emacs setup#
+# Personal Emacs setup
 
 ```
 git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 
 ```
 
-## Notes on Windows setup ##
+## Highlights 
 
+- undo-tree: editing history as a tree, with branches, rather than a stack: C-x u;
+- file explorer with nav-mode: F8;
+- markdown-mode editor;
+- Control-Tab and Shift-Tab to jump between buffer windows;
+- put full path to file in clipboard with M-c;
+- comment-uncommnet region and line with C-';
+- insert date and date-time with C-c . and C-c ,
+- move to specific window with Shift-<direction key>;
+- save current buffers and window setup with: C-x Shift-s to save current window layout and C-x Shift-f to return to saved window layout ;
+- easier keybindings for copy (C-c), paste (C-v), cut (C-x);
+- jump to beginning of word with ace-jump-mode: C-m then first letter of word;
+
+## Notes on Windows setup
+
+- checkout to new branch and make any changes there;
+- maybe use another dir for default-directory
+```emacs
+(setq default-directory "C:/stuff" )
+```
+- make sure your Shift-Tab and Control-Tab keys are mapped correctly;
 - use the .reg file and the vbs script in the setup/ dir to add emacs to the context menu;
 - in WinSCP, you can add the following to the editor command:
 ```

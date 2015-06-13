@@ -1,9 +1,5 @@
 ;; here be PACKAGES
 ;; package paths and default dir
- ;; uncomment the following two lines for work machine
-;; (setq default-directory "D:/vagrant" )
-;; (add-to-list 'load-path "D:/applications/emacs/myplugins")
-;; uncomment the followign two lines for home machine
 (setq default-directory "~/dev" )
 ;; (add-to-list 'load-path "~/Ddrive/applications/emacs/myplugins")
 (add-to-list 'load-path "~/.emacs.d/elpa")
@@ -178,10 +174,10 @@
 
 ;; add Shift-TAB to run other-window
 (global-set-key (kbd "<C-tab>") 'other-window)
-;; uncomment the following line for home machine
+;; binding from somewhere
 (global-set-key (kbd "<S-iso-lefttab>") 'other-window)
-;; uncomment the following line for work machine
-;; (global-set-key (kbd "<backtab>") 'other-window)
+;; binding from putty terminal for Shift-Tab
+(global-set-key (kbd "<backtab>") 'other-window)
 
 ;; keybinding for my macro
 (global-set-key (kbd "C-o") 'end-of-line-then-new-line)
