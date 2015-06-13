@@ -17,7 +17,7 @@ git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 - move to specific window with Shift-<direction key>;
 - save current buffers and window setup with: C-x Shift-s to save current window layout and C-x Shift-f to return to saved window layout ;
 - easier keybindings for copy (C-c), paste (C-v), cut (C-x);
-- jump to beginning of word with ace-jump-mode: C-m then first letter of word;
+- jump to beginning of word with ace-jump-mode: C-q then first letter of word;
 
 ## Notes on Windows setup
 
