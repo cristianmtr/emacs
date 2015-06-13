@@ -32,3 +32,7 @@ git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 ```
 path\to\emacs\bin\emacsclientw.exe --alternate-editor="path\to\emacs\bin\emacs.exe" -c !.!
 ```
+
+## TODO
+
+- export from markdown-mode to html file in markdown-editor dir, open browser, and have some js on the index.html file to load that generated file into the correct div;
