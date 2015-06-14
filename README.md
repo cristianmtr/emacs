@@ -14,7 +14,7 @@ git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 - put full path to file in clipboard with M-c;
 - comment-uncommnet region and line with C-';
 - insert date and date-time with C-c . and C-c ,
-- move to specific window with Shift-<direction key>;
+- move to specific window with Shift-*direction key*;
 - save current buffers and window setup with: C-x Shift-s to save current window layout and C-x Shift-f to return to saved window layout ;
 - easier keybindings for copy (C-c), paste (C-v), cut (C-x);
 - jump to beginning of word with ace-jump-mode: C-q then first letter of word;
