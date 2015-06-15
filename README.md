@@ -18,6 +18,10 @@ git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 - save current buffers and window setup with: C-x Shift-s to save current window layout and C-x Shift-f to return to saved window layout ;
 - easier keybindings for copy (C-c), paste (C-v), cut (C-x);
 - jump to beginning of word with ace-jump-mode: C-q then first letter of word;
+- includes markdown previewer:
+  - open markdown-editor\index.html in your browser and paste your markdown source on the left;
+  - full credits go to jbt: [source here](https://github.com/jbt/markdown-editor)
+
 
 ## Notes on Windows setup
 
