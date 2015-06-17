@@ -92,9 +92,13 @@
   (interactive)
   (insert (format-time-string "%c")))
 
-;; macro:
+;; macro end-of-line-then-new-line
 (fset 'end-of-line-then-new-line
    "\C-e\C-j")
+
+;; macro align-to-four
+(fset 'align-to-four
+   "\C-a\C-t\C-e\C-u4\234")
 
 ;; various MODES go here
 
@@ -182,6 +186,9 @@
 ;; keybinding for my macro
 (global-set-key (kbd "C-o") 'end-of-line-then-new-line)
 
+;; keybinding for align-to-four macro
+(global-set-key (kbd "C-M-=") 'align-to-four)
+
 ;; keybindings for TAB and S-TAB for indentation
 (global-set-key (kbd "M--") 'elpy-nav-move-iblock-left)
 (global-set-key (kbd "M-=") 'elpy-nav-move-iblock-right)
@@ -215,17 +222,21 @@
 ;; ace jump mode
 (define-key global-map (kbd "C-q") 'ace-jump-mode)
 
-
 ;; finally custom set variables from the GUI menus
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (tsdh-light))))
+ '(cua-mode t nil (cua-base))
+ '(custom-enabled-themes (quote (tsdh-light)))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 113 :width normal)))))
+
+
