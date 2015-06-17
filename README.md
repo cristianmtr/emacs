@@ -39,4 +39,5 @@ path\to\emacs\bin\emacsclientw.exe --alternate-editor="path\to\emacs\bin\emacs.e
 
 ## TODO
 
+- have M-- and M-= insert 4 spaces (or delete 4 spaces, respectively) either on the region selected or at the beggining of the curr line;
 - export from markdown-mode to html file in markdown-editor dir, open browser, and have some js on the index.html file to load that generated file into the correct div;
