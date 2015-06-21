@@ -10,8 +10,6 @@
 (require 'ido)
 (require 'yafolding)
 (require 'back-button)
-(require 'helm-config)
-
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
@@ -23,6 +21,11 @@
    '("melpa" . "http://melpa.org/packages/")
    t)
 (package-initialize)
+
+;; helm mode needs to go after package-initialize
+(require 'helm-config)
+(setq helm-split-window-in-side-p t)
+(helm-mode 1)
 
 ;; markdown mode
 (autoload 'markdown-mode "markdown-mode"
@@ -41,10 +44,10 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-;; helm mode
-(setq helm-split-window-in-side-p t)
 
-(helm-mode 1)
+
+;; global company mode
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;;FUNCTION definitions here be
 ;; for commenting and uncommenting lines
@@ -175,7 +178,7 @@
 (cua-mode)
 
 ;; this needs to go AFTER the cua-mode
-(global-set-key (kbd "C-SPC") 'dabbrev-expand)
+(global-set-key (kbd "C-SPC") 'company-complete)
 
 ;; C-j should function as RET in Python Elpy mode
 ;; commented out on Linux. doesn't work. default behaviour is ok
