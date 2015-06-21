@@ -8,16 +8,20 @@
 (require 'undo-tree)
 (require 'nav)
 (require 'ido)
-(require 'package)
 (require 'yafolding)
 (require 'back-button)
+(require 'helm-config)
+
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
   "Emacs quick move minor mode"
   t)
-(add-to-list 'package-archives
-             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+(require 'package)
+(add-to-list
+   'package-archives
+   '("melpa" . "http://melpa.org/packages/")
+   t)
 (package-initialize)
 
 ;; markdown mode
@@ -36,6 +40,11 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; helm mode
+(setq helm-split-window-in-side-p t)
+
+(helm-mode 1)
 
 ;;FUNCTION definitions here be
 ;; for commenting and uncommenting lines
