@@ -7,6 +7,8 @@ git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 
 ## Highlights 
 
+- helm mode for M-x;
+- company-mode for completions: C-/ ;
 - undo-tree: editing history as a tree, with branches, rather than a stack: C-x u;
 - file explorer with nav-mode: F8;
 - markdown-mode editor;
