@@ -24,8 +24,13 @@
 
 ;; helm mode needs to go after package-initialize
 (require 'helm-config)
-(setq helm-split-window-in-side-p t)
+;; (setq helm-split-window-in-side-p t)
 (helm-mode 1)
+(autoload 'helm-company "helm-company") ;; Not necessary if using ELPA package
+(eval-after-load 'company
+  '(progn
+     (define-key company-mode-map (kbd "C-/") 'helm-company)
+     (define-key company-active-map (kbd "C-/") 'helm-company)))
 
 ;; markdown mode
 (autoload 'markdown-mode "markdown-mode"
@@ -178,7 +183,7 @@
 (cua-mode)
 
 ;; this needs to go AFTER the cua-mode
-(global-set-key (kbd "C-SPC") 'company-complete)
+(global-set-key (kbd "C-SPC") 'dabbrev-expand)
 
 ;; C-j should function as RET in Python Elpy mode
 ;; commented out on Linux. doesn't work. default behaviour is ok
@@ -234,21 +239,5 @@
 ;; ace jump mode
 (define-key global-map (kbd "C-q") 'ace-jump-mode)
 
-;; finally custom set variables from the GUI menus
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(cua-mode t nil (cua-base))
- '(custom-enabled-themes nil)
- '(show-paren-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal)))))
-
-
+;; global undo tree keybindings
+(define-key global-map (kbd "C-x u") 'undo-tree-visualize)
