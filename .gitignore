@@ -13,3 +13,5 @@ elpa/archives/elpy/archive-contents*
 elpa/archives/*
 init.el.*
 *elc
+bookmarks
+ido.last
