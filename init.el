@@ -127,7 +127,7 @@
 (defun insert-date-and-time ()
   "Inserts standard date time string." 
   (interactive)
-  (insert (format-time-string "%c")))
+  (insert (format-time-string "%H %M")))
 
 ;; macro end-of-line-then-new-line
 (fset 'end-of-line-then-new-line
