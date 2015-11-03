@@ -1,6 +1,7 @@
 ;; here be PACKAGES
 ;; package paths and default dir
-(setq default-directory "~/dev" )
+(setq homedir-file "~/.emacs.d/homedir.el")
+(load homedir-file)
 
 (setq spell-file "~/.emacs.d/spell.el")
 (load spell-file)
