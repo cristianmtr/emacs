@@ -1,6 +1,10 @@
 ;; here be PACKAGES
 ;; package paths and default dir
 (setq default-directory "~/dev" )
+
+(setq spell-file "~/.emacs.d/spell.el")
+(load spell-file)
+
 ;; (add-to-list 'load-path "~/Ddrive/applications/emacs/myplugins")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode")
@@ -275,5 +279,4 @@
  )
 
 (global-set-key (kbd "M-/") 'hippie-expand)
-
 
