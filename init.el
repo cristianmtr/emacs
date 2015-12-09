@@ -14,6 +14,7 @@
 (require 'ido)
 (require 'yafolding)
 (require 'back-button)
+(require 'saveplace)
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
@@ -46,6 +47,14 @@
 
 ;; global company mode
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; show line nos on all buffers
+(global-linum-mode)
+
+;; saveplace
+(setq-default save-place t)
+(setq save-place-file "~/.emacs.d/saved-places/file")
+(setq save-place-forget-unreadable-files nil)
 
 ;;FUNCTION definitions here be
 
@@ -271,7 +280,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(bmkp-last-as-first-bookmark-file "~\\.emacs.d\\bookmarks"))
+ '(bmkp-last-as-first-bookmark-file "~\\.emacs.d\\bookmarks")
+ '(custom-enabled-themes (quote (tsdh-dark))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
