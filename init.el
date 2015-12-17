@@ -103,12 +103,7 @@
         (comment-or-uncomment-region beg end)))
 
 ;; line-wraping
-(when (fboundp 'adaptive-wrap-prefix-mode)
-  (defun my-activate-adaptive-wrap-prefix-mode ()
-    "Toggle `visual-line-mode' and `adaptive-wrap-prefix-mode' simultaneously."
-    (adaptive-wrap-prefix-mode (if visual-line-mode 1 -1)))
-  (add-hook 'visual-line-mode-hook 'my-activate-adaptive-wrap-prefix-mode))
-(add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
+(global-visual-line-mode t)
 
  ;; something about the search function 
 (defun my-goto-match-beginning ()
@@ -152,6 +147,9 @@
 ;; C-x <left>	go back in (buffer-local) mark-ring
 ;; C-x <right>	go forward in (buffer-local) mark-ring
 (back-button-mode 1)
+
+;; PASTE WILL OVERWRITE SELECTION
+(delete-selection-mode 1)
 
 ;; undo tree
 (global-undo-tree-mode)
@@ -262,7 +260,9 @@
     map))
 
 ;; ace jump mode
-(define-key global-map (kbd "C-q") 'ace-jump-mode)
+(define-key global-map (kbd "C-;") 'ace-jump-mode)
+;; make sure insert quoted is mapped
+(define-key global-map (kbd "C-q") 'quoted-insert)
 
 ;; global undo tree keybindings
 (define-key global-map (kbd "C-x u") 'undo-tree-visualize)
