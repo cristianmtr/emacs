@@ -112,7 +112,8 @@
         (comment-or-uncomment-region beg end)))
 
 ;; line-wraping
-(global-visual-line-mode t)
+(global-visual-line-mode 1)
+(setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
 
  ;; something about the search function 
 (defun my-goto-match-beginning ()
