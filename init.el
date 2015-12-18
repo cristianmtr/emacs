@@ -6,7 +6,12 @@
 (setq spell-file "~/.emacs.d/spell.el")
 (load spell-file)
 
-;; (add-to-list 'load-path "~/Ddrive/applications/emacs/myplugins")
+(setq windows-workarounds-file "~/.emacs.d/windows.el")
+(load windows-workarounds-file)
+
+;; load paths
+(add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
+(add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode")
 (require 'undo-tree)
@@ -291,4 +296,6 @@
  )
 
 (global-set-key (kbd "M-/") 'hippie-expand)
+
+(setq org-src-fontify-natively t)
 
