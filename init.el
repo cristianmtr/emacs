@@ -14,6 +14,10 @@
 (add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode")
+(add-to-list 'load-path "~/.emacs.d/elpa/adoc-mode/")
+(add-to-list 'load-path "~/.emacs.d/elpa/markup-faces/")
+(require 'markup-faces)
+(require 'adoc-mode)
 (require 'undo-tree)
 (require 'nav)
 (require 'ido)
@@ -49,6 +53,9 @@
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; adoc mode
+(add-to-list 'auto-mode-alist '("\\.adoc\\'" . adoc-mode))
 
 ;; global company mode
 (add-hook 'after-init-hook 'global-company-mode)
