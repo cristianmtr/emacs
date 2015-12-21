@@ -6,9 +6,6 @@
 (setq spell-file "~/.emacs.d/spell.el")
 (load spell-file)
 
-(setq windows-workarounds-file "~/.emacs.d/windows.el")
-(load windows-workarounds-file)
-
 ;; load paths
 (add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
 (add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp")
