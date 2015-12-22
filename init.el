@@ -291,17 +291,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~\\.emacs.d\\bookmarks")
- '(custom-enabled-themes (quote (tsdh-dark))))
+ '(cua-mode t nil (cua-base))
+ '(custom-enabled-themes (quote (tsdh-dark)))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Consolas" :foundry "microsoft" :slant normal :weight normal :height 120 :width normal)))))
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 
+;; some options for org-mode
 (setq org-src-fontify-natively t)
+(setq org-startup-folded (quote showeverything))
 
 (require 'ox-latex)
 (add-to-list 'org-latex-packages-alist '("" "minted"))
