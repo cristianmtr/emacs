@@ -306,7 +306,9 @@
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 
+;; some options for org-mode
 (setq org-src-fontify-natively t)
+(setq org-startup-folded (quote showeverything))
 
 (require 'ox-latex)
 (add-to-list 'org-latex-packages-alist '("" "minted"))
