@@ -7,6 +7,7 @@
 (load spell-file)
 
 ;; load paths
+(setq org-replace-disputed-keys t)
 (add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
 (add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp")
 (add-to-list 'load-path "~/.emacs.d/elpa")
