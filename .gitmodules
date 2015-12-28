@@ -1,4 +1,7 @@
 [submodule "org-mode"]
 	path = org-mode
 	url = git://orgmode.org/org-mode.git
+[submodule "org-reveal"]
+	path = org-reveal
+	url = https://github.com/yjwen/org-reveal.git
 

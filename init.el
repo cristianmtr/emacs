@@ -16,6 +16,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/adoc-mode/")
 (add-to-list 'load-path "~/.emacs.d/elpa/markup-faces/")
+(add-to-list 'load-path "~/.emacs.d/org-reveal/")
 (require 'markup-faces)
 (require 'adoc-mode)
 (require 'undo-tree)
@@ -24,6 +25,7 @@
 (require 'yafolding)
 (require 'back-button)
 (require 'saveplace)
+(require 'ox-reveal)
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
