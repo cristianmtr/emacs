@@ -15,6 +15,8 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/adoc-mode/")
 (add-to-list 'load-path "~/.emacs.d/elpa/markup-faces/")
 (add-to-list 'load-path "~/.emacs.d/org-reveal/")
+(add-to-list 'load-path "~/.emacs.d/elpa/mmm-mode/")
+(require 'mmm-mode)
 (require 'markup-faces)
 (require 'adoc-mode)
 (require 'undo-tree)
@@ -50,9 +52,39 @@
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
 
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+;; (add-to-list 'auto-mode-alist '("\\.markdown\\'" . mmm-mode))
+;; (add-to-list 'auto-mode-alist '("\\.md\\'" . mmm-mode))
+
+;; new mmm mode for markdown-mode
+(setq mmm-global-mode 'maybe)
+
+(defun my-mmm-markdown-auto-class (lang &optional submode)
+  "Define a mmm-mode class for LANG in `markdown-mode' using SUBMODE.
+If SUBMODE is not provided, use `LANG-mode' by default."
+  (let ((class (intern (concat "markdown-" lang)))
+        (submode (or submode (intern (concat lang "-mode"))))
+        (front (concat "^```" lang "[\n\r]+"))
+        (back "^```"))
+    (mmm-add-classes (list (list class :submode submode :front front :back back)))
+    (mmm-add-mode-ext-class 'markdown-mode nil class)))
+
+;; Mode names that derive directly from the language name
+(mapc 'my-mmm-markdown-auto-class
+      '("awk" "bibtex" "c" "cpp" "css" "html" "latex" "lisp" "makefile"
+        "markdown" "python" "r" "ruby" "sql" "stata" "xml"))
+
+;; Mode names that differ from the language name
+(my-mmm-markdown-auto-class "fortran" 'f90-mode)
+(my-mmm-markdown-auto-class "perl" 'cperl-mode)
+(my-mmm-markdown-auto-class "bash" 'shell-script-mode)
+(my-mmm-markdown-auto-class "shell" 'shell-script-mode)
+(my-mmm-markdown-auto-class "c++" 'cpp-mode)
+
+(setq mmm-parse-when-idle 't)
+
+(global-set-key (kbd "C-c m") 'mmm-parse-buffer)
 
 ;; adoc mode
 (add-to-list 'auto-mode-alist '("\\.adoc\\'" . adoc-mode))
