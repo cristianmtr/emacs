@@ -16,6 +16,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/markup-faces/")
 (add-to-list 'load-path "~/.emacs.d/org-reveal/")
 (add-to-list 'load-path "~/.emacs.d/elpa/mmm-mode/")
+(require 'ox-rst)
 (require 'mmm-mode)
 (require 'markup-faces)
 (require 'adoc-mode)
