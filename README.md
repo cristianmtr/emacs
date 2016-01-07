@@ -9,6 +9,7 @@ git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 
 - helm mode for M-x;
 - company-mode for completions: C-/ ;
+	- use "begin-backend" - "spell" to get dictionary-based word-completion;
 - dabbrev with C-SPC;
 - scroll down with C-M-n and up with C-M-p;
 - undo-tree: editing history as a tree, with branches, rather than a stack: C-x u;
