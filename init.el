@@ -384,3 +384,15 @@ Non-interactive arguments are Begin End Regexp"
       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+;; from enberg on #emacs
+;; close compilation buffer after 2 secs
+(setq compilation-finish-function
+  (lambda (buf str)
+    (if (null (string-match ".*exited abnormally.*" str))
+        ;;no errors, make the compilation window go away in a few seconds
+        (progn
+          (run-at-time
+           "2 sec" nil 'kill-buffer ;;replaced delete-windows-on with this for buffer only
+           (get-buffer-create "*compilation*"))
+          (message "No Compilation Errors!")))))
