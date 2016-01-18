@@ -42,7 +42,12 @@ git clone git@github.com:cristianmtr/emacs.git ~/.emacs.d
 path\to\emacs\bin\emacsclientw.exe --alternate-editor="path\to\emacs\bin\emacs.exe" -c !.!
 ```
 
+## MARKDOWN MODE
+
+- ``M-Ent`` creates new list item
+- ``M-right`` and ``M-left`` promote and demote list items, respectively;
+- *careful* with ``C-j`` and ``Enter`` - they behave differently in different situations;
+
 ## TODO
 
-- have M-- and M-= insert 4 spaces (or delete 4 spaces, respectively) either on the region selected or at the beggining of the curr line;
-- export from markdown-mode to html file in markdown-editor dir, open browser, and have some js on the index.html file to load that generated file into the correct div;
+
