@@ -1,0 +1,6 @@
+[
+	{ "keys": ["ctrl+j"], "command": "insert", "args": {"characters": "\n"} },
+	{ "keys": ["alt+x"], "command": "show_overlay", "args": {"overlay": "command_palette"} }, 
+    { "keys": ["ctrl+;"], "command": "ace_jump_char" },
+    {"keys": ["ctrl+t"], "command": "sbp_set_mark, sbp_set_mark"},
+]
